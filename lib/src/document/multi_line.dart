@@ -69,7 +69,6 @@ class MultiLine extends SectionImpl implements Section {
   ///   first line
   ///   second line
   /// ```
-  // ignore: use_setters_to_change_properties
   void set(String value) {
     /// we are not going to write out whitespace.
     if (Strings.isBlank(value)) {

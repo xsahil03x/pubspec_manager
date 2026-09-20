@@ -27,7 +27,6 @@ class DependencyPubHosted extends Dependency implements DependencyVersioned {
       DependencyPubHosted._(
           dependencies, line, SectionImpl.fromLine(line), line.key, line.value);
 
-  @override
   factory DependencyPubHosted._insertAfter(
     Dependencies dependencies,
     PubSpec pubspec,
