@@ -1,3 +1,7 @@
+# 4.1.0
+- upgraded deps and lint fixes.
+- fixed a bug where the DependencyPath.path field was final. Added a setting to make it mutable as we do for other dependeny type fields.
+
 # 4.0.1
 - Improve the readme.
 
