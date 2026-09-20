@@ -16,7 +16,7 @@ class DependencyPath extends Dependency {
 
   String _name;
 
-  final String path;
+  String _path;
 
   /// The parent dependency key
   final Dependencies _dependencies;
@@ -25,13 +25,12 @@ class DependencyPath extends Dependency {
   final LineImpl _line;
 
   /// For future use - maybe
-  // ignore: unused_field
   final LineImpl _pathLine;
 
   /// Creates Path dependency from an existing [Line] in
   /// the document.
   DependencyPath._(this._dependencies, this._line, this._pathLine,
-      this._section, this._name, this.path)
+      this._section, this._name, this._path)
       : super._();
 
   factory DependencyPath._fromLine(Dependencies dependencies, LineImpl line) {
@@ -56,11 +55,6 @@ class DependencyPath extends Dependency {
 
     final section = SectionImpl.fromLine(line);
     return DependencyPath._(dependencies, line, pathLine, section, name, path);
-
-    // // ignore: prefer_foreach
-    // for (final comment in dependency.comments) {
-    //   comments.append(comment);
-    // }
   }
 
   @override
@@ -69,6 +63,13 @@ class DependencyPath extends Dependency {
   set name(String name) {
     _name = name;
     _line.key = name;
+  }
+
+  String get path => _path;
+
+  set path(String path) {
+    _path = path;
+    _pathLine.value = path;
   }
 
   /// List of comments associated with the
